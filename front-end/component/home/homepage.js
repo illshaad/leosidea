@@ -1,8 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Card, H1, Form, Button, CenterElement, Input } from "./index.style";
-import { sendDateFromBack } from "../service/api";
-export default function Homepage() {
+import { sendDateFromBack } from "../../service/api";
+
+export default function Homepage({ nextStep }) {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
@@ -10,11 +11,15 @@ export default function Homepage() {
       firstName: data.firstName,
       lastName: data.lastName,
       birthday: data.birthday,
-    }).then((res) => console.log(res));
+    }).then((res) => {
+      if (res) {
+        nextStep(1);
+      }
+    });
   };
 
   return (
-    <Card>
+    <>
       <H1>Welcome</H1>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <CenterElement>
@@ -33,6 +38,6 @@ export default function Homepage() {
           Send
         </Button>
       </Form>
-    </Card>
+    </>
   );
 }
