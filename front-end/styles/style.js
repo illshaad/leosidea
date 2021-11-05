@@ -5,6 +5,7 @@ export const ContainerFlex = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
 `;
 
 export const Card = styled.div`
