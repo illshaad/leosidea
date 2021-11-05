@@ -1,10 +1,18 @@
 import Axios from "axios";
+
 const sendDateFromBack = async (data) => {
   const { data: dataUser } = await Axios.post(
-    "http://localhost:5000/user",
+    process.env.NEXT_PUBLIC_API_BACKEND,
     data
   );
   return { dataUser };
 };
 
-export { sendDateFromBack };
+const getUser = async () => {
+  const { data: dataAllUser } = await Axios.get(
+    `${process.env.NEXT_PUBLIC_API_BACKEND}/users`
+  );
+  return { dataAllUser };
+};
+
+export { sendDateFromBack, getUser };

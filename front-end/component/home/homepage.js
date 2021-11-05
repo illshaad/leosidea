@@ -1,10 +1,21 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Card, H1, Form, Button, CenterElement, Input } from "./index.style";
+import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
+import * as yup from "yup";
+
+import { H1, Form, Button, CenterElement, Input } from "../../styles/style";
 import { sendDateFromBack } from "../../service/api";
 
+const schema = yup.object().shape({
+  firstName: yup.string().required(),
+  lastName: yup.string().required(),
+  birthday: yup.string().required(),
+});
+
 export default function Homepage({ nextStep }) {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({
+    resolver: yupResolver(schema),
+  });
 
   const onSubmit = (data) => {
     sendDateFromBack({

@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  height: 100vh;
-  background-image: url("/background.jpg");
+export const ContainerFlex = styled.div`
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const Card = styled.div`
@@ -18,8 +20,15 @@ export const Card = styled.div`
 
 export const H1 = styled.h1`
   color: #999;
-  font-size: 18px;
+  font-size: 25px;
   text-align: center;
+`;
+
+export const P = styled.p`
+  color: #6347d1;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 800;
 `;
 
 export const Form = styled.form`
@@ -53,4 +62,32 @@ export const Button = styled.button`
   justify-content: center;
   margin: 5px auto;
   cursor: pointer;
+`;
+
+export const PinkArrowRight = styled.div`
+  cursor: pointer;
+  font-size: 28px;
+  color: #6347d1;
+`;
+
+export const PinkArrowLeft = styled.div`
+  cursor: pointer;
+  font-size: 28px;
+  color: #6347d1;
+`;
+
+export const GreyArrowRight = styled.div`
+  cursor: pointer;
+  font-size: 28px;
+  color: grey;
+`;
+export const GreyArrowLeft = styled.div`
+  cursor: pointer;
+  font-size: 28px;
+  color: grey;
+`;
+
+export const Span = styled.div`
+  color: red;
+  font-weight: 800;
 `;
