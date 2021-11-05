@@ -9,13 +9,15 @@ import {
   GreyArrowRight,
   GreyArrowLeft,
   ContainerFlex,
+  Button,
 } from "../../styles/style";
 
-export default function Profil({ users }) {
+export default function Profil({ users, prevStep }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <>
+      <Button onClick={prevStep}>&lt;</Button>
       <H1>Hello you are registered in our database</H1>
       <ContainerFlex>
         {currentIndex > 0 ? (

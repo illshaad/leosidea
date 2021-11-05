@@ -11,12 +11,12 @@ export const ContainerFlex = styled.div`
 export const Card = styled.div`
   padding: 20px 20px;
   width: 40%;
-  height: 400px;
+  height: 500px;
   background: #fff;
   border-radius: 4px;
   box-shadow: 0px 0px 3px #6347d1;
   text-align: center;
-  margin: 250px auto 0 auto;
+  margin: 150px auto 0 auto;
 `;
 
 export const H1 = styled.h1`
@@ -27,7 +27,13 @@ export const H1 = styled.h1`
 
 export const P = styled.p`
   color: #6347d1;
-  font-size: 20px;
+  font-size: ${({ fontSize }) => fontSize || "20px"};
+  text-align: center;
+  font-weight: 800;
+`;
+export const Perror = styled.span`
+  color: red;
+  font-size: 12px
   text-align: center;
   font-weight: 800;
 `;

@@ -18,10 +18,13 @@ export default function Home() {
   const nextStep = (_step) => {
     setStep(_step);
   };
+  const prevStep = () => {
+    setStep((prev) => prev - 1);
+  };
 
   const stepComponent = [
     <HomePage nextStep={nextStep} />,
-    <Profil users={users} />,
+    <Profil users={users} prevStep={prevStep} />,
   ];
 
   return <Card>{stepComponent[step]}</Card>;
