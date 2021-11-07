@@ -23,8 +23,8 @@ export default function Home() {
   };
 
   const stepComponent = [
-    <HomePage nextStep={nextStep} key={key} />,
-    <Profil users={users} prevStep={prevStep} key={key} />,
+    <HomePage nextStep={nextStep} />,
+    <Profil users={users} prevStep={prevStep} />,
   ];
 
   return <Card>{stepComponent[step]}</Card>;
