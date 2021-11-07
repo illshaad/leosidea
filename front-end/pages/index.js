@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import HomePage from "../component/home/Homepage";
-import Profil from "../component/profil/Profil";
+import HomePage from "../components/home/Homepage";
+import Profil from "../components/profil/Profil";
 import { Card } from "../styles/style";
 import { useState } from "react";
 import { getUser } from "../service/api";
@@ -23,8 +23,8 @@ export default function Home() {
   };
 
   const stepComponent = [
-    <HomePage nextStep={nextStep} />,
-    <Profil users={users} prevStep={prevStep} />,
+    <HomePage nextStep={nextStep} key={key} />,
+    <Profil users={users} prevStep={prevStep} key={key} />,
   ];
 
   return <Card>{stepComponent[step]}</Card>;
